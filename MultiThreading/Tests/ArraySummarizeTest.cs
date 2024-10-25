@@ -2,12 +2,12 @@
 
 namespace MultiThreading.Tests
 {
-    public static class ListSummarizeTest
+    public static class ArraySummarizeTest
     {
         public static void RunTest(
             string functionName,
-            Func<IList<int>, long> function,
-            IList<int> elements,
+            Func<int[], long> function,
+            int[] elements,
             int iterations)
         {
             ArgumentNullException.ThrowIfNull(function);
@@ -32,7 +32,7 @@ namespace MultiThreading.Tests
             Console.WriteLine(
                 "Function {0}:\n\tArray Length: {1}\n\tIterations: {2}\n\tResult: {3}\n\tAverage Time (ms): {4}\n",
                 functionName,
-                elements.Count,
+                elements.Length,
                 iterations,
                 result,
                 executionTimesInTicks.Average() / TimeSpan.TicksPerMillisecond);

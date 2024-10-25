@@ -3,18 +3,18 @@
 namespace MultiThreading.Implementations
 {
     /// <summary>
-    /// Implementation that summarizes the list elements in a custom parallelism.
+    /// Implementation that summarizes the array elements in a custom parallelism.
     /// </summary>
-    public class ParallelListSummarizer : IListSummarizer
+    public class ParallelArraySummarizer : IArraySummarizer
     {
         /// <inheritdoc/>
-        public long Summarize(IList<int> elements)
+        public long Summarize(int[] elements)
         {
             long sum = 0;
 
             Parallel.For<long>(
                 fromInclusive: 0,
-                toExclusive: elements.Count,
+                toExclusive: elements.Length,
                 localInit: () => 0,
                 body: (i, loop, subSum) =>
                 {

@@ -1,21 +1,21 @@
 ﻿namespace MultiThreading.Helpers
 {
     /// <summary>
-    /// Helper for generating lists.
+    /// Helper for generating array data.
     /// </summary>
-    internal static class ListGenerator
+    internal static class ArrayGenerator
     {
         /// <summary>
-        /// Generates a list of integers of a given length.
+        /// Generates an array of integers of a given length.
         /// </summary>
-        public static List<int> GenerateList(int elementsLength)
+        public static int[] GenerateArray(int elementsLength)
         {
             Random random = new();
 
             return Enumerable
                 .Range(0, elementsLength)
                 .Select(_ => random.Next())
-                .ToList();
+                .ToArray();
         }
     }
 }

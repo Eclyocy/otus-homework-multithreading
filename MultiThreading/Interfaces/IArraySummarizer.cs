@@ -1,13 +1,13 @@
 ﻿namespace MultiThreading.Interfaces
 {
     /// <summary>
-    /// Interface providing logic for summarizing the elements of a list.
+    /// Interface providing logic for summarizing the elements of an array.
     /// </summary>
-    public interface IListSummarizer
+    public interface IArraySummarizer
     {
         /// <summary>
         /// Calculates the sum of all the elements of the <paramref name="elements"/>.
         /// </summary>
-        long Summarize(IList<int> elements);
+        long Summarize(int[] elements);
     }
 }

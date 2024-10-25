@@ -9,24 +9,24 @@ namespace MultiThreading
     {
         public static void Main(string[] args)
         {
-            List<int> _elementsLengths = [100, 1000, 10000, 100000, 1000000, 10000000];
+            int[] elementsLengths = [100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000];
 
-            List<IListSummarizer> _listSummarizers =
+            IArraySummarizer[] arraySummarizers =
             [
-                new PlainListSummarizer(),
-                new ParallelListSummarizer(),
-                new ParallelLinqListSummarizer()
+                new PlainArraySummarizer(),
+                new ParallelArraySummarizer(),
+                new ParallelLinqArraySummarizer()
             ];
 
-            foreach (int elementsLength in _elementsLengths)
+            foreach (int elementsLength in elementsLengths)
             {
-                IList<int> elements = ListGenerator.GenerateList(elementsLength);
+                int[] elements = ArrayGenerator.GenerateArray(elementsLength);
 
-                foreach (IListSummarizer listSummarizer in _listSummarizers)
+                foreach (IArraySummarizer arraySummarizer in arraySummarizers)
                 {
-                    ListSummarizeTest.RunTest(
-                        listSummarizer.GetType().Name,
-                        listSummarizer.Summarize,
+                    ArraySummarizeTest.RunTest(
+                        arraySummarizer.GetType().Name,
+                        arraySummarizer.Summarize,
                         elements,
                         100);
                 }

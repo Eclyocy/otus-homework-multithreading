@@ -3,12 +3,12 @@
 namespace MultiThreading.Implementations
 {
     /// <summary>
-    /// Implementation that summarizes the list elements in a plain sequence.
+    /// Implementation that summarizes the array elements in a plain sequence.
     /// </summary>
-    public class PlainListSummarizer : IListSummarizer
+    public class PlainArraySummarizer : IArraySummarizer
     {
         /// <inheritdoc/>
-        public long Summarize(IList<int> elements)
+        public long Summarize(int[] elements)
         {
             long sum = 0;
 
